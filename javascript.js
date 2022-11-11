@@ -1,11 +1,14 @@
-// Random computer selection - numerical value
+// PlayerInput prompt - WORKS
+let playerInput = prompt("Type rock, paper, or scissors")
+
+// Random computer selection - numerical value - WORKS
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min) ) + min;
   }
 
 let result = getRndInteger(1, 4);
 
-// Converts computer numerical value to selection
+// Converts computer numerical value to selection - WORKS
 if (result == 1) {
     computerSelection = "rock";
   } else if (result == 2) {
@@ -14,25 +17,40 @@ if (result == 1) {
     computerSelection = "scissors";
   }
 
-// Temporary for testing - player input
+/* DISABLED for testing
 const playerInput = "Rock";
+*/
 
-// Makes playerSelection lowercase
-let playerSelection = playerInput.toLowerCase();
+// Makes playerSelection lowercase - WORKS
+const playerSelection = playerInput.toLowerCase();
 
-// Comparisons for Win-Lose-Tie Messages
-if ((playerSelection == "rock") && (computerSelection == "scissors")) {
-  message = "You win! Rock beats Scissors.";
-} else if ((playerSelection == "rock") && (computerSelection == "paper")) {
-  message = "You lose! Paper beats Rock.";
-} else if ((playerSelection == "paper") && (computerSelection == "scissors")) {
-  message = "You lose! Scissors beats paper.";
-} else if ((playerSelection == "paper") && (computerSelection == "rock")) {
-  message = "You win! Paper beats rock.";
-} else if ((playerSelection == "scissors") && (computerSelection == "rock")) {
-  message = "You lose! Rock beats scissors.";
-} else if ((playerSelection == "scissors") && (computerSelection == "paper")) {
-  message = "You win! Scissors beats paper.";
-} else { message = "It's a tie!";
+// Plays a round and returns a message - WORKS
+
+function playRound(playerSelection, computerSelection) {
+  if ((playerSelection == "rock") && (computerSelection == "scissors")) {
+    return "You win! Rock beats Scissors.";
+  } else if ((playerSelection == "rock") && (computerSelection == "paper")) {
+    return "You lose! Paper beats Rock.";
+  } else if ((playerSelection == "paper") && (computerSelection == "scissors")) {
+    return "You lose! Scissors beats paper.";
+  } else if ((playerSelection == "paper") && (computerSelection == "rock")) {
+    return "You win! Paper beats rock.";
+  } else if ((playerSelection == "scissors") && (computerSelection == "rock")) {
+    return "You lose! Rock beats scissors.";
+  } else if ((playerSelection == "scissors") && (computerSelection == "paper")) {
+    return "You win! Scissors beats paper.";
+  } else { return "It's a tie!";
+  }
 }
+
+console.log(playRound(playerSelection, computerSelection));
+
+/* Testing Area 
+function game(playRound) {
+  for (let i = 0; i < 5; i++) {
+    console.log(playRound(playerSelection, computerSelection));
+  }
+}
+*/
+
 
