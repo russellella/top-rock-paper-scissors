@@ -1,10 +1,3 @@
-
-// PlayerInput prompt - WORKS
-let playerInput = prompt("Type rock, paper, or scissors")
-
-// Makes playerSelection lowercase - WORKS
-const playerSelection = playerInput.toLowerCase();
-
 // Returns Computer Selection - WORKS
 function getComputerSelection() {
   let result = Math.floor(Math.random() * 3);
@@ -14,42 +7,70 @@ function getComputerSelection() {
     return "paper";
   } else if (result === 2) {
     return "scissors";
-  } else {
-    return "uh oh";
+  }
+  // For bug testing
+  else {
+    return "getComputerSelection Uh Oh!";
   }
 }
 
 // Plays 1 Round of RPS - WORKS
-// CHECK IF TIE COUNTS AS ROUND
 function playRound() {
+
+  // PlayerInput prompt - WORKS
+  let playerInput = prompt("Type rock, paper, or scissors")
+
+  // Makes playerSelection lowercase - WORKS
+  let playerSelection = playerInput.toLowerCase();
+
+  // Runs getComputerSelection function
   let computerSelection = getComputerSelection();
+
+  // If/Else for scores
   if ((playerSelection == "rock") && (computerSelection == "scissors")) {
-    return "You win this round! Rock beats Scissors.";
+    x++;
+    return "You win this round! Rock beats Scissors. You: " + x + " Computer: " + y;
   } else if ((playerSelection == "rock") && (computerSelection == "paper")) {
-    return "You lose this round! Paper beats Rock.";
+    y++;
+    return "You lose this round! Paper beats Rock. You: " + x + " Computer: " + y;
   } else if ((playerSelection == "paper") && (computerSelection == "scissors")) {
-    return "You lose this round! Scissors beats paper.";
+    y++;
+    return "You lose this round! Scissors beats paper. You: " + x + " Computer: " + y;
   } else if ((playerSelection == "paper") && (computerSelection == "rock")) {
-    return "You win this round! Paper beats rock.";
+    x++;
+    return "You win this round! Paper beats rock. You: " + x + " Computer: " + y;
   } else if ((playerSelection == "scissors") && (computerSelection == "rock")) {
-    return "You lose this round! Rock beats scissors.";
+    y++;
+    return "You lose this round! Rock beats scissors. You: " + x + " Computer: " + y;
   } else if ((playerSelection == "scissors") && (computerSelection == "paper")) {
-    return "You win this round! Scissors beats paper.";
+    x++;
+    return "You win this round! Scissors beats paper. You: " + x + " Computer: " + y;
   } else if (((playerSelection == "scissors") && (computerSelection == "scissors"))
           || ((playerSelection == "rock") && (computerSelection == "rock"))
           || ((playerSelection == "paper") && (computerSelection == "paper"))) {
-    return "It's a tie!";
+    return "This round is a tie! You: " + x + " Computer: " + y;
   } else {
-    return "Oops, that doesn't work!";
+    return "Round Uh Oh!";
   }
 }
 
+// Player Score - Starting
+let x = 0;
+// Computer Score - Starting
+let y = 0;
 
-/*
+// Game Play
 function game() {
   for (let i = 0; i < 5; i++) {
-  playRound();
-  
+  console.log(playRound());
+}
+if (x > y) {
+  return "You win the game! You: " + x + " Computer: " + y;
+} else if (x < y) {
+  return "You lose the game :( You: " + x + " Computer: " + y;
+} else if (x = y) {
+  return "This game is a tie! You: " + x + " Computer: " + y;
+} else {
+  return "Game Uh Oh!"
 }
 }
-*/
