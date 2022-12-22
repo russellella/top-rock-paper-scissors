@@ -86,11 +86,42 @@ function gameResults () {
     document.getElementById("roundresults").innerText = ("");
     document.getElementById("gameresults").innerText = ("Victory!");
     document.getElementById("score").innerText = ("You: " + x + " Computer: " + y);
+    const rock = document.getElementById("rock");
+    rock.remove();
+    const paper = document.getElementById("paper");
+    paper.remove();
+    const scissors = document.getElementById("scissors");
+    scissors.remove();
+
+    const button = document.createElement('button')
+    button.innerText = "Play Again";
+    button.classList.add("button");
+    button.addEventListener('click', refreshPage)
+    document.getElementById("playagain").appendChild(button);
+
+
   } else if (y >=5) {
     document.getElementById("roundresults").innerText = ("");
     document.getElementById("gameresults").innerText = ("Defeat!");
     document.getElementById("score").innerText = ("You: " + x + " Computer: " + y);
+    const rock = document.getElementById("rock");
+    rock.remove();
+    const paper = document.getElementById("paper");
+    paper.remove();
+    const scissors = document.getElementById("scissors");
+    scissors.remove();
+    const button = document.createElement('button')
+    button.innerText = "Play Again";
+    button.classList.add("button");
+    button.addEventListener('click', refreshPage)
+    document.getElementById("playagain").appendChild(button);
   }
 }
+
+const refreshPage = () => {
+  location.reload();
+}
+
+button.addEventListener('click', refreshPage)
 
 

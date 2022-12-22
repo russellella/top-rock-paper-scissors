@@ -1,15 +1,15 @@
 body {
-    font-family: Roboto, 'Open Sans', sans-serif;
+    font-family: Dosis, Roboto, 'Open Sans', sans-serif;
     margin: 0;
     min-height: 100vh;
-    background-image: linear-gradient(#CBF3F0, #2EC4B6);
+    background-image:linear-gradient(#1F2833, #0B0C10);
     display: flex;
     flex-direction: column;
 }
 
 a:link, a:visited {
     text-decoration: none;
-    color: white;
+    color: #C5C6C7;
 }
 
 a:hover, a:active {
@@ -18,54 +18,60 @@ a:hover, a:active {
 
 .top {
     text-align: center;
-    color: #13756C;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    font-size: 18px;
 }
 
-.playbuttons {
+.playbuttons,
+.playagain {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px 0px;
     gap: 30px;
+    font-family: Dosis;
 }
 
-.playbuttons button {
+.button {
     background: none;
-    border: 5px solid #FF9F1C;
+    border: 5px solid #45A29E;
     line-height: 1;
     margin: 0.5em;
     padding: 1em 2em;
-    color: #13756C;
+    color: #C5C6C7;
     transition: 0.25s;
     font-size: 30px;
     font-weight: 800;
+    font-family: Dosis;
 }
 
-.playbuttons button:hover,
-.playbuttons button:focus {
-    box-shadow: 0 0.5em 0.5em -0.4em #FFBF69;
+.button:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em #66FCF1;
   transform: translateY(-0.25em);
 }
 
 .roundresults,
-.gameresults {
+.gameresults,
+.playagain {
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 24px;
-    color: #13756C
+    color: #C5C6C7;
+    font-weight: 600;
 }
 
 .score {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
-    color: #13756C
+    font-size: 20px;
+    color: #66FCF1;
+    margin-top: 10px;
 }
 
 /* ADJUST */
@@ -77,8 +83,8 @@ ul {
 }
 
 .footer {
-    background-color: #071a2b;
-    color: white;
+    background-color: #1F2833;
+    color: #C5C6C7;
     display: flex;
     justify-content: space-evenly;
     margin-top: auto;
