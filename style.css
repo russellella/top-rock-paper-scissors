@@ -2,10 +2,9 @@ body {
     font-family: Roboto, 'Open Sans', sans-serif;
     margin: 0;
     min-height: 100vh;
-    background-image: linear-gradient(#a1eeff, #73ceff);
+    background-image: linear-gradient(#CBF3F0, #2EC4B6);
     display: flex;
     flex-direction: column;
-
 }
 
 a:link, a:visited {
@@ -19,15 +18,11 @@ a:hover, a:active {
 
 .top {
     text-align: center;
-
-}
-
-.button {
-    background-color: transparent;
-    border: 3px solid orange;
-    padding: 32px 32px;
-    text-align: center;
-    font-size: 18px;
+    color: #13756C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .playbuttons {
@@ -36,6 +31,41 @@ a:hover, a:active {
     justify-content: center;
     padding: 20px 0px;
     gap: 30px;
+}
+
+.playbuttons button {
+    background: none;
+    border: 5px solid #FF9F1C;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+    color: #13756C;
+    transition: 0.25s;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.playbuttons button:hover,
+.playbuttons button:focus {
+    box-shadow: 0 0.5em 0.5em -0.4em #FFBF69;
+  transform: translateY(-0.25em);
+}
+
+.roundresults,
+.gameresults {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #13756C
+}
+
+.score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #13756C
 }
 
 /* ADJUST */
